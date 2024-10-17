@@ -13,13 +13,13 @@
 # Estrutura das pastas
 
 /projeto
-  ├── /src
-  │   ├── /scss
-  │   ├── /js
-  │   └── /images
-  ├── /dist
-  ├── package.json
-  └── gulpfile.mjs
+   /src
+      /scss
+      /js
+      /images
+    /dist
+    package.json
+    gulpfile.mjs
 
 # HTML e CSS
 - HTML: Estrutura básica
