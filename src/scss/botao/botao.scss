@@ -1,0 +1,19 @@
+.estilizar-botao {
+    background-color: #00c6ab;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #20c67a;
+    }
+}

@@ -1,8 +1,9 @@
 import gulp from 'gulp';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import imagemin from 'gulp-imagemin';
 import terser from 'gulp-terser';
+import concat from 'gulp-concat';
 
 
 const sass = gulpSass(dartSass);
@@ -26,7 +27,8 @@ const paths = {
 export function styles() {
     return gulp.src(paths.styles.src)
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest(paths.styles.dest));
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('dist/css'));
 }
 
 //Imagens
@@ -52,4 +54,5 @@ export function watch() {
 
 //Exportação
 
-export default gulp.series(styles, scripts, images, watch);
+const build = gulp.series(styles, scripts, images);
+export default gulp.parallel(build, watch);
